@@ -1,3 +1,19 @@
-<h1>Coke related tweets</h1>
+<h3>Coke related tweets</h3>
 
-<%= render @tweets %>
+<% if @tweets %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sentiment</th>
+      <th>Message</th>
+      <th>User</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  </tbody>
+    <%= render @tweets %>
+  </tbody>
+</table>
+
+<% end %>
