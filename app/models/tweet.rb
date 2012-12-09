@@ -10,7 +10,7 @@ class Tweet
 
   field :_id, type: Integer, default: -> { id }
 
-  attr_accessible :id, :sentiment, :user_handle, :followers, :message
+  attr_accessible :id, :sentiment, :user_handle, :followers, :message, :created_at, :updated_at
 
   validates_presence_of :id
 end
