@@ -43,9 +43,10 @@ Where you will find the app.
 
 There is an external dependency to run (some of) the specs: `phantomjs`.
 
-You can find information on how to install it [here](http://phantomjs.org).
+You can find information on how to install it [here](http://phantomjs.org). In this case,
+we need a specific version: `1.7.0`.
 
-Once phantomjs is installed, you can run:
+Once `phantomjs 1.7.0` is installed, you can run:
 
     bundle exec rspec
 

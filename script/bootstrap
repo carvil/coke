@@ -88,12 +88,17 @@ echo -e "\033[0m"
 echo "Checking for phantomjs"
 if test ! $(which phantomjs)
 then
-  echo -e "\033[31m  x You need to install phantomjs:"
+  echo -e "\033[31m  x You need to install phantomjs 1.7.0:"
   echo -e "   brew install phantomjs"
   echo -e "\033[0m"
   exit
 else
-  echo -e "\033[32m  + phantomjs $(phantomjs -v) found"
+  if test ! $(phantomjs -v | grep -o '1\.7\.0')
+  then
+    echo -e "\033[31m  x You need to upgrade phantomjs to version 1.7.0"
+  else
+    echo -e "\033[32m  + phantomjs $(phantomjs -v) found"
+  fi
 fi
 echo -e "\033[0m"
 
