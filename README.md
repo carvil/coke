@@ -14,6 +14,9 @@ instructions below.
 
 This application uses `mongodb` (v2.2.2) as a data store, so you should install it before continuing.
 
+Please note: you need to use `ruby 1.9.3` for this application, since the latest
+`mongoid` driver fails under `ruby 1.9.2`.
+
 Once `mongodb` is installed, you should install bundler:
 
     gem install bundler
@@ -23,9 +26,6 @@ And then install the dependencies:
     bundle install
 
 At this point, you are ready to run the application.
-
-Please note: you need to use `ruby 1.9.3` for this application, since the latest
-`mongoid` driver fails under `ruby 1.9.2`.
 
 ## Running the application
 
