@@ -21,6 +21,8 @@ end
 
 gem 'jquery-rails'
 gem 'rspec-rails'
+gem 'faraday', '~> 0.8.4'
+gem 'faraday_middleware', '~> 0.9.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
