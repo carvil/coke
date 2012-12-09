@@ -1,6 +1,6 @@
 <tr>
   <td><%= to_img(tweet.sentiment) %></td>
   <td><%= style_message(tweet.message) %></td>
-  <td><%= tweet.user_handle %></td>
+  <td><%= link_to tweet.user_handle, user_path(tweet.user_handle) %></td>
   <td><%= tweet.count %></td>
 </tr>

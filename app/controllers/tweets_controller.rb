@@ -14,6 +14,12 @@ class TweetsController < ApplicationController
     respond_with @tweets
   end
 
+  def user
+    @user = params[:user_handle]
+    @tweets = Tweet.where(user_handle: @user).desc(:sentiment)
+    respond_with @tweets
+  end
+
   private
 
   def tweets_desc_sentiment

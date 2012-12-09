@@ -1,0 +1,17 @@
+<h3>Messages from <%= @user %></h3>
+
+<% if @tweets %>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sentiment</th>
+      <th>Message</th>
+      <th>User</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody id="tweets">
+    <%= render @tweets %>
+  </tbody>
+  </table>
+<% end %>
