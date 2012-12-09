@@ -6,6 +6,9 @@ require 'rspec/autorun'
 require 'vcr'
 require 'database_cleaner'
 
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock

@@ -20,4 +20,6 @@ group :test do
   gem 'vcr', '~> 2.3.0'
   gem 'webmock', '~> 1.8.3'
   gem "database_cleaner", "~> 0.9.1"
+  gem "poltergeist", "~> 1.0.2"
+  gem "launchy", "~> 2.1.2"
 end
