@@ -4,7 +4,7 @@ Fetch tweets related to coca-cola
 
 ## Installation
 
-This application uses `mongodb` as a data store, so you should install it before continuing.
+This application uses `mongodb` (v2.2.2) as a data store, so you should install it before continuing.
 
 Once `mongodb` is installed, you should install bundler:
 
@@ -30,7 +30,7 @@ Where you will find the app.
 
 ## Running specs
 
-There is an external dependency to run the specs: `phantomjs`.
+There is an external dependency to run (some of) the specs: `phantomjs`.
 
 You can find information on how to install it [here](http://phantomjs.org).
 
@@ -40,6 +40,17 @@ Once phantomjs is installed, you can run:
 
 This command will run the entire test suite.
 
-## Considerations
+## Retrieving data
 
-TODO
+In order to fetch data from this application, one can query the following end-point:
+
+    http://localhost:3000/tweets.json
+
+This endpoint, when requested using `json` format, will return a list of all messages
+stored by the system in `json` format. Here is an [example](https://gist.github.com/4247059).
+
+It is also possible to retrieve messages for a specific user:
+
+    http://localhost:3000/tweets/@coke_lvr.json
+
+This will return the messages from `@coke_lvr`.
