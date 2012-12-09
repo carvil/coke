@@ -24,6 +24,9 @@ And then install the dependencies:
 
 At this point, you are ready to run the application.
 
+Please note: you need to use `ruby 1.9.3` for this application, since the latest
+`mongoid` driver fails under `ruby 1.9.2`.
+
 ## Running the application
 
 In order to run the application, start the server:
