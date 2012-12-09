@@ -1,8 +1,9 @@
 <h3>Coke related tweets</h3>
 
-<% if @tweets %>
+<%= link_to "Fetch more messages", {controller: :tweets, action: :load}, :remote=> true, :class=>"btn" %>
 
-<table class="table table-striped">
+<% if @tweets %>
+  <table class="table table-striped">
   <thead>
     <tr>
       <th>Sentiment</th>
@@ -11,9 +12,8 @@
       <th>Count</th>
     </tr>
   </thead>
-  </tbody>
+  <tbody id="tweets">
     <%= render @tweets %>
   </tbody>
-</table>
-
+  </table>
 <% end %>
