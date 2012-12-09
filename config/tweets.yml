@@ -1,6 +1,9 @@
 test:
   url: http://adaptive-test-api.herokuapp.com
+  endpoint: /tweets.json
 development:
   url: http://adaptive-test-api.herokuapp.com
+  endpoint: /tweets.json
 production:
   url: http://adaptive-test-api.herokuapp.com
+  endpoint: /tweets.json
