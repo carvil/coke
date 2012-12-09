@@ -1,0 +1,117 @@
+#!/bin/bash
+#
+# setup
+#
+# Sets your system up for coke.
+
+set -e
+
+echo ""
+echo -e "\033[32m  COKE"
+echo "  Check out coke related tweets"
+echo ""
+echo -e "\033[0m"
+
+### HOMEBREW
+
+echo "Checking for homebrew"
+if test ! $(which brew)
+then
+  echo -e "\033[31m  x You need to install homebrew:"
+  echo -e "    http://mxcl.github.com/homebrew/"
+  exit
+else
+  echo -e "\033[32m  + homebrew $(brew --version) found"
+fi
+
+### RBENV
+
+echo "Checking for rbenv"
+if test ! $(which rbenv)
+then
+  echo -e "\033[31m  x You need to install rbenv:"
+  echo -e "    brew install rbenv"
+  echo -e "    brew install ruby-build"
+  echo -e "\033[0m"
+  exit
+else
+  echo -e "\033[32m  + rbenv found"
+fi
+echo -e "\033[0m"
+
+### RUBY -V > 1.9.3
+
+echo "Checking for ruby"
+if test ! $(rbenv version-name | grep -o '1\.9\.3-[a-z][0-9][0-9][0-9]')
+then
+  echo -e "\033[31m  x You need to install ruby 1.9.2 or greater (ideally 1.9.3):"
+  echo -e "    rbenv install 1.9.3-p327"
+  echo -e "\033[0m"
+  exit
+else
+  echo -e "\033[32m  + ruby $(rbenv version) found"
+fi
+echo -e "\033[0m"
+
+### BUNDLER
+
+echo "Checking for bundler"
+if test ! $(which bundle)
+then
+  echo -e "\033[31m  x You need to install Bundler:"
+  echo -e "    gem install bundler"
+  echo -e "    rbenv rehash"
+  echo -e "\033[0m"
+  exit
+else
+  echo -e "\033[32m  + bundler found"
+fi
+echo -e "\033[0m"
+
+### MONGODB
+
+echo "Checking for mongodb"
+if test ! $(which mongod)
+then
+  echo -e "\033[31m  x You need to install mongodb:"
+  echo -e "    brew install mongodb"
+  echo -e "\033[0m"
+  exit
+else
+  echo -e "\033[32m  + mongodb $(mongod --version) found"
+  echo -e "\033[32m  Remember to start mongodb (run 'brew info mongodb' for details)"
+fi
+echo -e "\033[0m"
+
+### PHANTOMJS
+
+echo "Checking for phantomjs"
+if test ! $(which phantomjs)
+then
+  echo -e "\033[31m  x You need to install phantomjs:"
+  echo -e "   brew install phantomjs"
+  echo -e "\033[0m"
+  exit
+else
+  echo -e "\033[32m  + phantomjs $(phantomjs -v) found"
+fi
+echo -e "\033[0m"
+
+### INSTALL GEMS
+
+echo "Installing gems..."
+bundle install --quiet
+echo -e "\033[32m  + Gems installed\033[0m"
+echo ""
+
+### RUNNING SPECS
+
+echo "Running specs..."
+bundle exec rspec
+echo -e "\033[32m  + Finished running specs\033[0m"
+
+### DONE
+echo -e "\033[32m Finished bootstrapping coke."
+echo "  Run 'bundle exec rails s' to start the server, or use pow instead!"
+echo "  On your browser, navigate to 'http://localhost:3000' (http://coke.dev if using pow)"
+echo -e "\033[0m"
