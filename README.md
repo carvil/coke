@@ -4,8 +4,12 @@ Fetch tweets related to coca-cola
 
 ## Installation
 
-There is a `bootstrap` script which will check for dependencies and guide you through
-the installation process. If you choose not to run it (or it doesn't work as expected), you will find the detailed
+There is a `bootstrap` script in the scripts directory, which will check for dependencies and guide you through
+the installation process. You can run it with:
+
+    ./script/bootstrap
+
+If you choose not to run it (or it doesn't work as expected), you will find the detailed
 instructions below.
 
 This application uses `mongodb` (v2.2.2) as a data store, so you should install it before continuing.
