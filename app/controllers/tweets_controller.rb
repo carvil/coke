@@ -8,8 +8,8 @@ class TweetsController < ApplicationController
   end
 
   def load
-    # Need to check for errors and show message is anything is wrong
-    Tweet.load
+    status = Tweet.load
+    @error = "Something went wrong, please try again" unless status == :ok
     @tweets = tweets_desc_sentiment
     respond_with @tweets
   end

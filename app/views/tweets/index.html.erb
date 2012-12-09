@@ -1,5 +1,6 @@
 <h3>Coke related tweets</h3>
 
+
 <div class="row">
   <div class="span2">
     <%= link_to "Fetch more messages", {controller: :tweets, action: :load}, remote: true, class: "btn", id: "more_tweets" %>
@@ -9,6 +10,10 @@
     <div id="loading" class="loading-gif-none">
       <%= image_tag "loading.gif" %>
     </div>
+  </div>
+
+  <div class="span8">
+    <p id="error"></p>
   </div>
 
 </div>
