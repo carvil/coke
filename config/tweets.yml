@@ -1,0 +1,6 @@
+test:
+  url: http://adaptive-test-api.herokuapp.com
+development:
+  url: http://adaptive-test-api.herokuapp.com
+production:
+  url: http://adaptive-test-api.herokuapp.com
