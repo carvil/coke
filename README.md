@@ -2,8 +2,6 @@
 
 Fetch tweets related to coca-cola
 
-[![Build Status](https://travis-ci.org/carvil/coke.png)](https://travis-ci.org/carvil/coke)
-
 ## Installation
 
 This application uses `mongodb` as a data store, so you should install it before continuing.
