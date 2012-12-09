@@ -8,4 +8,16 @@ module TweetsHelper
     end
   end
 
+  def to_img(sentiment)
+    if sentiment <= -0.4
+      return image_tag "negative.png"
+    end
+    if sentiment > -0.4 and sentiment <= 0.3
+      return image_tag "neutral.png"
+    end
+    if sentiment > 0.3
+      return image_tag "positive.png"
+    end
+  end
+
 end
