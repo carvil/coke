@@ -2,6 +2,8 @@
 
 Fetch tweets related to coca-cola
 
+![](https://dl.dropbox.com/u/2609804/coke.png)
+
 ## Installation
 
 There is a `bootstrap` script in the scripts directory, which will check for dependencies and guide you through
