@@ -15,8 +15,8 @@ describe TweetsController do
           Tweet.load
           get 'index', format: :json
           JSON.parse(response.body).should eq([
-            {"_id"=>3, "count"=>1, "created_at"=>"2012-09-27T16:11:15Z", "followers"=>24, "id"=>3, "message"=>"Coke is it!", "sentiment"=>"1.0", "updated_at"=>"2012-09-27T16:11:15Z", "user_handle"=>"@coke_snortr"},
-            {"_id"=>16, "count"=>1, "created_at"=>"2012-12-07T16:55:45Z", "followers"=>3, "id"=>16, "message"=>"Hi there", "sentiment"=>"0.0", "updated_at"=>"2012-12-07T16:55:45Z", "user_handle"=>"@idiot"}
+            {"_id"=>3, "count"=>1, "created_at"=>"2012-09-27T16:11:15Z", "followers"=>24, "id"=>3, "message"=>"Coke is it!", "sentiment"=>1.0, "updated_at"=>"2012-09-27T16:11:15Z", "user_handle"=>"@coke_snortr"},
+            {"_id"=>16, "count"=>1, "created_at"=>"2012-12-07T16:55:45Z", "followers"=>3, "id"=>16, "message"=>"Hi there", "sentiment"=>0.0, "updated_at"=>"2012-12-07T16:55:45Z", "user_handle"=>"@idiot"}
           ])
           response.status.should eq(200)
         end

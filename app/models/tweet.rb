@@ -3,7 +3,7 @@ class Tweet
   include Mongoid::Timestamps
 
   field :id, type: Integer
-  field :sentiment, type: BigDecimal
+  field :sentiment, type: Float
   field :user_handle, type: String
   field :followers, type: Integer
   field :message, type: String
